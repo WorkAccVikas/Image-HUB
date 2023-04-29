@@ -1,0 +1,308 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --primary: #0e2a47;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.search {
+  position: relative;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.search .content {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.search h1 {
+  font-size: 2.65rem;
+  font-weight: 600;
+}
+
+.search p {
+  font-size: 1.5rem;
+  margin-top: 8px;
+}
+
+.search .search-box {
+  height: 55px;
+  margin: 45px 0;
+  position: relative;
+}
+
+.search-box i {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  font-size: 1.4rem;
+  color: #8d8d8d;
+  transform: translateY(-50%);
+}
+
+input,
+button,
+i {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding-left: 55px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery .images {
+  columns: 5 340px;
+  gap: 15px;
+  margin-top: 40px;
+  max-width: 95%;
+}
+
+.images .card {
+  list-style: none;
+  margin-bottom: 14px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.images .card .details {
+  position: absolute;
+  /* bottom: 0; */
+  bottom: -100px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: bottom 0.1s ease;
+}
+
+.images .card:hover .details {
+  bottom: 0;
+}
+
+.photographer {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.photographer i {
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+
+.details .photographer span {
+  font-size: 1.05rem;
+}
+
+.card .details button {
+  padding: 3px 8px;
+  font-size: 1.1rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.images img {
+  width: 100%;
+}
+
+.gallery .load-more {
+  color: #fff;
+  background: var(--primary);
+  font-size: 1.2rem;
+  margin: 50px 0;
+  padding: 12px 27px;
+  cursor: pointer;
+}
+
+.gallery .load-more.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+}
+
+.lightbox.show {
+  display: block;
+}
+
+.lightbox .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 100%;
+  max-width: 850px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.wrapper header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .photographer {
+  color: #333;
+}
+
+header .photographer i {
+  font-size: 1.7rem;
+}
+
+header .photographer span {
+  font-size: 1.2rem;
+}
+
+header .buttons i {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.buttons i:last-child {
+  margin-left: 10px;
+  background: #6c757d;
+}
+
+.preview-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.wrapper .preview-img .img {
+  max-height: 65vh;
+  max-width: 90vw;
+}
+
+.preview-img .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (width < 560px) {
+  .search {
+    height: 35vh;
+  }
+
+  .content h1 {
+    font-size: 1.55rem;
+  }
+
+  .content p {
+    font-size: 1.1rem;
+  }
+
+  .search .search-box {
+    height: 40px;
+    margin: 35px 0;
+  }
+
+  .search-box i {
+    font-size: 1rem;
+  }
+
+  .search-box input {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (560px < width < 767px) {
+  .content h1 {
+    font-size: 1.95rem;
+  }
+
+  .content p {
+    font-size: 1.3rem;
+  }
+
+  .search .search-box {
+    height: 45px;
+    margin: 35px 0;
+  }
+
+  .search-box i {
+    font-size: 1.2rem;
+    left: 18px;
+    transform: translateY(-55%);
+  }
+
+  .search-box input {
+    font-size: 1rem;
+  }
+}
+
+/* media query */
+@media screen and (768px < width < 992px) {
+  .content h1 {
+    font-size: 2.25rem;
+  }
+
+  .content p {
+    font-size: 1.3rem;
+  }
+
+  .search .search-box {
+    height: 50px;
+  }
+}
+
+
